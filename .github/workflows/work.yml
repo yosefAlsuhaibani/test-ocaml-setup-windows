@@ -13,7 +13,7 @@ jobs:
           ocaml-compiler: "4.14"
           opam-pin: false
       - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
-      - run: OPAMSOLVERTIMEOUT=1200 opam install -y --assume-depexts --deps-only required.opam deps.opam
+      - run: OPAMSOLVERTIMEOUT=1200 opam install -y --assume-depexts --deps-only .
 name: work
 on:
   pull_request: null
