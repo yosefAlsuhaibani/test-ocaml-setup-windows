@@ -1,0 +1,22 @@
+jobs:
+  job:
+    defaults:
+      run:
+        shell: bash
+    env:
+      SHELLOPTS: igncr
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ocaml/setup-ocaml@v3.0.10
+        with:
+          ocaml-compiler: "4.14"
+          opam-pin: false
+      - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
+name: work
+on:
+  pull_request: null
+  push:
+    branches:
+      - main
+  workflow_dispatch: null
