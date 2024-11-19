@@ -8,7 +8,9 @@ jobs:
           ocaml-compiler: "4.14"
           opam-pin: false
       - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
-      - run: opam install -y --assume-depexts --deps-only .
+      - run: |
+        echo "OPAMSOLVERTIMEOUT=1200" >> $env:GITHUB_ENV
+        opam install -y --assume-depexts --deps-only .
 name: work
 on:
   pull_request: null
