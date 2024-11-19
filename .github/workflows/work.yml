@@ -9,7 +9,7 @@ jobs:
           opam-pin: false
       - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
       - run: echo "OPAMSOLVERTIMEOUT=1200" >> $env:GITHUB_ENV
-      - run: opam install -y --assume-depexts --deps-only .
+      - run: sudo opam install -y --assume-depexts --deps-only .
 name: work
 on:
   pull_request: null
