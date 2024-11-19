@@ -18,7 +18,71 @@ bug-reports: "https://github.com/semgrep/semgrep/issues"
 depends: [
   "ocaml" {>= "4.13.0"}
   "dune" {>= "3.7" & >= "2.7.0"}
-  "ocamlfind"
+  "base"
+  "menhir" {= "20230608"}
+  "base" {>= "v0.15.1"}
+  "fpath"
+  "bos"
+  "fileutils"
+  "alcotest"
+  "alcotest-js"
+  "alcotest-lwt"
+  "calendar"
+  "fmt"
+  "ocolor"
+  "ANSITerminal"
+  "terminal_size"
+  "uucp"
+  "uutf"
+  "logs"
+  "atdgen"
+  "yojson" {>= "2.0.0"}
+  "yaml"
+  "xmlm"
+  "sarif" {>= "0.3.0"}
+  "cmdliner"
+  "ppxlib"
+  "ppx_deriving"
+  "ppx_deriving_yojson"
+  "ppx_hash"
+  "ppx_inline_test"
+  "ppx_sexp_conv" {= "v0.16.0"}
+  "ppx_expect"
+  "visitors" {= "20210608"}
+  "re"
+  "pcre"
+  "ocamlgraph"
+  "parmap"
+  "semver"
+  "timedesc" {>= "2.0.0"}
+  "lsp" {= "1.15.1-5.0"}
+  "git"
+  "trace"
+  "ppx_trace"
+  "opentelemetry" {>= "0.9"}
+  "ocurl" {= "0.9.1"}
+  "opentelemetry-client-ocurl"
+  "ambient-context-lwt"
+  "conf-libcurl" {= "2"}
+  "uri"
+  "uuidm" {>= "0.9.9"}
+  "cohttp" {= "6.0.0~beta2"}
+  "cohttp-lwt-unix"
+  "cohttp-lwt-jsoo"
+  "tls-lwt"
+  "emile"
+  "digestif" {>= "1.0.0"}
+  "tls-mirage" {= "0.17.3"}
+  "lwt"
+  "lwt_ppx"
+  "conf-libev" {os != "win32"}
+  "js_of_ocaml" {= "5.8.2"}
+  "js_of_ocaml-compiler" {= "5.8.2"}
+  "js_of_ocaml-ppx" {= "5.8.2"}
+  "js_of_ocaml-lwt" {= "5.8.2"}
+  "integers_stubs_js"
+  "git-unix"
+  "odoc" {with-doc}
 ]
 build: [
   ["dune" "subst"] {dev}
