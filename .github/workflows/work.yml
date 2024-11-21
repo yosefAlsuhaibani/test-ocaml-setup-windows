@@ -3,7 +3,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ocaml/setup-ocaml@v3.0.10
+      - uses: yosefalsuhaibani/setup-ocaml@master
         with:
           ocaml-compiler: "4.14"
           opam-pin: false
