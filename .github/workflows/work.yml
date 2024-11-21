@@ -7,7 +7,7 @@ jobs:
         with:
           ocaml-compiler: "4.14"
           opam-pin: false
-      - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8
+      - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
       - run: opam install -y .
 name: work
 on:
