@@ -3,11 +3,13 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ocaml/setup-ocaml@v3.0.10
+      - uses: yosefalsuhaibani/setup-ocaml@master
         with:
           ocaml-compiler: "4.14"
           opam-pin: false
       - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - run: opam install -y .
 name: work
 on:
