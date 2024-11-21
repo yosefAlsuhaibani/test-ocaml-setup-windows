@@ -1,0 +1,34 @@
+opam-version: "2.0"
+version: "1"
+synopsis: ""
+description: ""
+maintainer: []
+authors: []
+license: ""
+homepage: ""
+bug-reports: "a"
+depends: [
+  "ocaml" {>= "4.13.0"}
+  "dune" {>= "3.7" & >= "2.7.0"}
+  "base"
+  "menhir" {= "20230608"}
+  "base" {>= "v0.15.1"}
+  "opentelemetry" {>= "0.9"}
+  "ocurl" {= "0.9.1"}
+  "opentelemetry-client-ocurl"
+  "conf-libcurl" {= "2"}
+]
+build: [
+  ["dune" "subst"] {dev}
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@runtest" {with-test}
+    "@doc" {with-doc}
+  ]
+]
