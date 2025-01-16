@@ -3,11 +3,11 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ocaml/setup-ocaml@v3.0.10
+      - uses: ocaml/setup-ocaml@v3
         with:
           ocaml-compiler: "4.14"
           opam-pin: false
-      - run: opam install --depext-only conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
+      - run: opam install conf-pkg-config conf-gmp conf-libpcre conf-libpcre2-8 conf-libcurl
       - run: opam install -y .
 name: work
 on:
